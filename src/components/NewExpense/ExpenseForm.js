@@ -5,19 +5,22 @@ function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  //   const [userInut, setUserInput] = useState({
-  //     enteredTitle: "",
-  //     enteredAmount: "",
-  //     enteredDate: "",
-  //   });
+    // const [userInput, setUserInput] = useState({
+    //   enteredTitle: "",
+    //   enteredAmount: "",
+    //   enteredDate: "",
+    // });
 
   const titleChangeHandler = (e) => {
     setEnteredTitle(e.target.value);
     // setUserInput({
-    //   ...userInut,
+    //   ...userInput, // 전개 연산자 사용해서 나머지 요소들도 같이 가져감
     //   enteredTitle: e.target.value,
     // });
-    // setUserInput((prevState) => {
+
+    // 함수를 호출한 뒤, 변경 값을 넣어주어야 한다
+    // setUserInput((prevState) => { // 이전 상태의 스냅샷을 받아서
+    //   // 새로운 상태의 스냅샷을 return 한다
     //   return { ...prevState, enteredTitle: e.target.value };
     // });
   };
@@ -25,7 +28,7 @@ function ExpenseForm(props) {
   const amountChangeHandler = (e) => {
     setEnteredAmount(e.target.value);
     // setUserInput({
-    //   ...userInut,
+    //   ...userInput,
     //   enteredAmount: e.target.value,
     // });
   };
@@ -33,7 +36,7 @@ function ExpenseForm(props) {
   const dateChangeHandler = (e) => {
     setEnteredDate(e.target.value);
     // setUserInput({
-    //   ...userInut,
+    //   ...userInput,
     //   enteredDate: e.target.value,
     // });
   };
